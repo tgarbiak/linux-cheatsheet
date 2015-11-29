@@ -43,7 +43,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 - `find` searches for files in the directory tree
  - `find -name 'pattern'` - look for a file which name meets the _`pattern`_ (e.g. `find -name '*.html'` or `find -name 'id_rsa*'`)
  - `find directory -name 'pattern'` - look for a file with _`pattern`_ name in the _`directory`_
-- `grep 'pattern' where` - search for a _`pattern`_ within a file, e.g. `grep 'text' ./*.txt` looks for occurrences of "_`text`_" in all _`.txt`_ files in the current directory
+- `grep 'pattern' (location)` - search for a _`pattern`_ within a file, optionally in the specific _`location`_, e.g. `grep 'text' ./*.txt` looks for occurrences of "_`text`_" in all _`.txt`_ files in the current directory
  - `-P perl-regex` - uses Perl regular expression for a _`pattern`_ (for Perl/PHP lovers)
  - `-E extended-regex` - uses "extended" regular expression for a _`pattern`_
  - `-A number` - in addition to the line where _`pattern`_ was found also shows a _`number`_ of lines after
