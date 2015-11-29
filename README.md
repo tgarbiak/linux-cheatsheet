@@ -65,8 +65,8 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `-f` outputs the appended data as the file grows ("live update")
  - `-n number` how many lines should be shown
  - can show output from many files at once, e.g. `tail /var/log/*/*.log` or `tail file1 file2`
-- `vim file` opens a file in the vim editor (or `vim` to just open the vim editor)
- - `i` to switch from visual mode to edit mode (other ways: `a`, `I`, `A`)
+- `vim file` opens a _`file`_ in the vim editor (or `vim` to just open vim)
+ - `i` (when inside vim) switches from visual mode to edit mode (other ways: `a`, `I`, `A`)
  - `<Esc>` to switch from either visual or edit mode into a command mode
 - Notable `vim` commands:
  - `u` undo (`Ctrl+R` redo)
