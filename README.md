@@ -22,6 +22,20 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 - `pwd` - prints current/working directory
 
 ## Files
+- `touch file` creates a new _`file`_ or updates modification time if _`file`_ already exists
+- `mkdir directory` creates a new _`directory`_
+- `rm file` removes a file
+ - `-d` removes a directory (if it's empty)
+ - `-r` removes recursively (also removes directories)
+ - `-f` ignores problems like nonexistent files, never asks about anything
+ - `-i` asks before every removal (paranoid mode)
+ - `-I` asks before removing more than 3 files or when removing recursively (safe but not paranoid)
+- `ln target link_name` creates a link of name _`link_name`_ to the _`target`_
+ - `-s` the link is symbolic (soft), that's usually what you want, especially if you link to a directory
+- `cp source destination` copies _`source`_ file to the _`destination`_ file
+ - `-a source/. destination/` copies all files from the _`source`_ directory to the _`destination`_ directory (preserves folder structure, symbolic links, etc.)
+- `mv source destination` moves _`source`_ file to the _`destination`_ directory or file, e.g. `mv file1 file2` basically just renames _`file1`_ into _`file2`_, `mv file1 directory` moves _`file1`_ to the _`directory`_, `mv file1 directory/file2` moves _`file1`_ into _`directory`_ and renames it to _`file2`_
+ - `-f` doesn't ask if some file gets overwritten
 - `ls (directory)` lists files in the current or in the specific directory
  - `-l` long list format (more details)
  - `-a` also lists files which name starts from dot ("hidden" files)
@@ -33,7 +47,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `-P perl-regex` - uses Perl regular expression for a _`pattern`_ (for Perl/PHP lovers)
  - `-E extended-regex` - uses "extended" regular expression for a _`pattern`_
  - `-A number` - in addition to the line where _`pattern`_ was found also shows a _`number`_ of lines after
- - `-B number` - additionaly shows a _`number`_ of lines before the one where _`pattern`_ was found
+ - `-B number` - additionaly shows a _`number`_ of lines before the one where _`pattern`_ was found 
 
 ## Users
 
