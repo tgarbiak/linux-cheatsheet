@@ -67,17 +67,17 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - can show output from many files at once, e.g. `tail /var/log/*/*.log` or `tail file1 file2`
 - `vim file` opens a file in the vim editor (or `vim` to just open the vim editor)
  - `i` to switch from visual mode to edit mode (other ways: `a`, `I`, `A`)
- - `<Esc>` to switch from either visual or edit mode into command mode
- - Notable commands:
-  - `u` undo (`Ctrl+R` redo)
-  - `/search_pattern` searches for a _`search_pattern`_
-  - `n` search next
-  - `N` search prev
-  - `:e file` opens a _`file`_
-  - `:q` quits vim
-  - `:w` save (write)
-  - `:qw` save and quit
-  - `:q!` quit without saving
+ - `<Esc>` to switch from either visual or edit mode into a command mode
+- Notable `vim` commands:
+ - `u` undo (`Ctrl+R` redo)
+ - `/search_pattern` searches for a _`search_pattern`_
+ - `n` search next
+ - `N` search prev
+ - `:e file` opens a _`file`_
+ - `:q` quits vim
+ - `:w` save (write)
+ - `:qw` save and quit
+ - `:q!` quit without saving
 - `cat file` shows the content of the _`file`_
  - `-n` with line numbers 
  - can show content of many files at once, e.g. `cat /*.txt` or `cat file1 file2`
