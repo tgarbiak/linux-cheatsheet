@@ -11,7 +11,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 - [Basic commands](#basic-commands)
 - [Files](#files)
 - [Users](#users)
-- [Programs](#programs)
+- [Applications](#applications)
 - [Security](#security)
 - [Process management](#process-management)
 - [Text processing](#text-processing)
@@ -27,18 +27,18 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `-a` also lists files which name starts from dot ("hidden" files)
  - `-h` file size in human readable format (e.g. `4.0K` instead of `4096`)
 - `find` searches for files in the directory tree
- - `find -name 'pattern'` - look for a file which name meets the _pattern_ (e.g. `find -name '*.html'` or `find -name 'id_rsa*'`)
- - `find directory -name 'pattern'` - look for a file with _pattern_ name in the _directory_
-- `grep 'pattern' where` - search for a _patter_ within a file, e.g. `grep 'text' ./*.txt` looks for occurrences of "_text_" in all _.txt_ files in the current directory
- - `-P perl-regex` - uses Perl regular expression for _pattern_ (for Perl/PHP lovers)
- - `-E extended-regex` - uses "extended" regular expression for _pattern_
- - `-A number` - in addition to the line where _pattern_ was found also shows _number_ of lines after
- - `-B number` - additionaly shows number of lines before the one where _pattern_ was found
+ - `find -name 'pattern'` - look for a file which name meets the _`pattern`_ (e.g. `find -name '*.html'` or `find -name 'id_rsa*'`)
+ - `find directory -name 'pattern'` - look for a file with _`pattern`_ name in the _`directory`_
+- `grep 'pattern' where` - search for a _`pattern`_ within a file, e.g. `grep 'text' ./*.txt` looks for occurrences of "_`text`_" in all _`.txt`_ files in the current directory
+ - `-P perl-regex` - uses Perl regular expression for a _`pattern`_ (for Perl/PHP lovers)
+ - `-E extended-regex` - uses "extended" regular expression for a _`pattern`_
+ - `-A number` - in addition to the line where _`pattern`_ was found also shows a _`number`_ of lines after
+ - `-B number` - additionaly shows a _`number`_ of lines before the one where _`pattern`_ was found
 
 ## Users
 
-## Programs
-- `which program` tells where the _program_ is located, e.g. `which grep => /bin/grep`
+## Applications
+- `which application` tells where the _`application`_ is located, e.g. `which grep => /bin/grep`
 
 ## Security
 - port scanning, port blocking, firewall rules, honeypots...
@@ -47,8 +47,24 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 - top, kill, etc.
 
 ## Text processing
-- `tail file` shows the last part of the _file_ (last 10 lines)
+- `tail file` shows the last part of the _`file`_ (last 10 lines)
  - `-f` outputs the appended data as the file grows ("live update")
  - `-n number` how many lines should be shown
  - can show output from many files at once, e.g. `tail /var/log/*/*.log` or `tail file1 file2`
-- less, cat, vim, nano
+- `vim file` opens a file in the vim editor (or `vim` to just open the vim editor)
+ - `i` to switch from visual mode to edit mode (other ways: `a`, `I`, `A`)
+ - `<Esc>` to switch from either visual or edit mode into command mode
+ - Notable commands:
+  - `u` undo (`Ctrl+R` redo)
+  - `/search_pattern` searches for a _`search_pattern`_
+  - `n` search next
+  - `N` search prev
+  - `:e file` opens a _`file`_
+  - `:q` quits vim
+  - `:w` save (write)
+  - `:qw` save and quit
+  - `:q!` quit without saving
+- `cat file` shows the content of the _`file`_
+ - `-n` with line numbers 
+ - can show content of many files at once, e.g. `cat /*.txt` or `cat file1 file2`
+- less, nano
