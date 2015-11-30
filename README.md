@@ -76,7 +76,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `:e file` opens a _`file`_
  - `:q` quits vim
  - `:w` save (write)
- - `:qw` save and quit
+ - `:wq` save and quit
  - `:q!` quit without saving
 - `cat file` shows the content of the _`file`_
  - `-n` with line numbers 
