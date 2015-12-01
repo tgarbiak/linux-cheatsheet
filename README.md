@@ -53,6 +53,13 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ## Applications
 - `which application` tells where the _`application`_ is located, e.g. `which grep => /bin/grep`
+- `apt-get install package` installs _`package`_ from the repository
+- `apt-get remove package` uninstalls _`package`_
+ - `apt-get purge package` like `remove` but also deletes configuration files, etc.
+- `apt-cache search keyword` searches apps/packages by _`keyword`_
+- `apt-cache show package` shows info about app/package (e.g. version and size)
+- `apt-add-repository repository` adds _`repository`_ to the lists of repos (located under `/etc/apt/sources.list` or `/etc/apt/sources.list.d`
+ - `-r` removes repo from the list 
 
 ## Security
 - port scanning, port blocking, firewall rules, honeypots...
