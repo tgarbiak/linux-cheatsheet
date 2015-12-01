@@ -51,9 +51,19 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `-B <number>` - additionaly shows a `<number>` of lines before the one where `<pattern>` was found 
 
 ## Users
+- `cat /etc/passwd` to list all users (`cut -d: -f1 /etc/passwd` to just see their names)
 - `adduser <username>` adds a new user with name `<username>` (will also ask you to provide a password for that user)
- - `-g` specifies to which group user should be added (alternatively `adduser <username> <groupname>')
+ - `adduser <username> <groupname>` specifies to which group user should be added (or if user already exists adds `<username>` to the `<groupname>`)
+ - `--system` to add a system user
 - `addgroup <groupname>` adds a new user group
+- `deluser <username>` removes a user
+ - `--remove-home` removes user's home directory (`/home/<username>`)
+ - `--remove-all-files` removes all files owned by the user
+ - `--backup` backup files before removing
+ - `--system` if user is a system user
+- `deluser <username> <groupname>` removes a user from a group (user still exists)
+- `delgroup <groupname>` removes a group
+ - `--only-if-empty` only remove the group if there are no users in it
 
 ## Applications
 - `which <application>` tells where the `<application>` is located, e.g. `which grep => /bin/grep`
