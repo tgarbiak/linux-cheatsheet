@@ -51,7 +51,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `-B <number>` - additionaly shows a `<number>` of lines before the one where `<pattern>` was found 
 
 ## Users
-- `adduser <username>` adds a new user with name `<username>`
+- `adduser <username>` adds a new user with name `<username>` (will also ask you to provide a password for that user)
  - `-g` specifies to which group user should be added (alternatively `adduser <username> <groupname>')
 - `addgroup <groupname>` adds a new user group
 
