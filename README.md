@@ -19,46 +19,50 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 ## Directory structure
 
 ## Basic commands
-- `pwd` - prints current/working directory
+- `pwd` prints current/working directory
+- `sudo <command>` in general: to execute a `<command>` as an other user (e.g. root), usually: executes a command as a super user (e.g. root)
 
 ## Files
-- `touch file` creates a new _`file`_ or updates modification time if _`file`_ already exists
-- `mkdir directory` creates a new _`directory`_
-- `rm file` removes a file
+- `touch <file>` creates a new `<file>` or updates modification time if `<file>` already exists
+- `mkdir <directory>` creates a new `<directory>`
+- `rm <file>` removes a file
  - `-d` removes a directory (if it's empty)
  - `-r` removes recursively (also removes directories)
  - `-f` ignores problems like nonexistent files, never asks about anything
  - `-i` asks before every removal (paranoid mode)
  - `-I` asks before removing more than 3 files or when removing recursively (safe but not paranoid)
-- `ln target link_name` creates a link of name _`link_name`_ to the _`target`_
+- `ln <target> <link_name>` creates a link of name `<link_name>` to the `<target>`
  - `-s` the link is symbolic (soft), that's usually what you want, especially if you link to a directory
-- `cp source destination` copies _`source`_ file to the _`destination`_ file
- - `-a source/. destination/` copies all files from the _`source`_ directory to the _`destination`_ directory (preserves folder structure, symbolic links, etc.)
-- `mv source destination` moves _`source`_ file to the _`destination`_ directory or file, e.g. `mv file1 file2` basically just renames _`file1`_ into _`file2`_, `mv file1 directory` moves _`file1`_ to the _`directory`_, `mv file1 directory/file2` moves _`file1`_ into _`directory`_ and renames it to _`file2`_
+- `cp <source> <destination>` copies `<source>` file to the `<destination>` file
+ - `-a source/. destination/` copies all files from the `source` directory to the `destination` directory (preserves folder structure, symbolic links, etc.)
+- `mv <source> <destination>` moves `<source>` file to the `<destination>` directory or file, e.g. `mv file1 file2` basically just renames `file1` into `file2`, `mv file1 directory` moves `file1` to the `directory`, `mv file1 directory/file2` moves `file1` into the `directory` and renames the file to `file2`
  - `-f` doesn't ask if some file gets overwritten
-- `ls (directory)` lists files in the current or in the specific directory
+- `ls [<directory>]` lists files in the current or in the specific directory
  - `-l` long list format (more details)
  - `-a` also lists files which name starts from dot ("hidden" files)
  - `-h` file size in human readable format (e.g. `4.0K` instead of `4096`)
 - `find` searches for files in the directory tree
- - `find -name 'pattern'` - look for a file which name meets the _`pattern`_ (e.g. `find -name '*.html'` or `find -name 'id_rsa*'`)
- - `find directory -name 'pattern'` - look for a file with _`pattern`_ name in the _`directory`_
-- `grep 'pattern' (location)` - search for a _`pattern`_ within a file, optionally in the specific _`location`_, e.g. `grep 'text' ./*.txt` looks for occurrences of "_`text`_" in all _`.txt`_ files in the current directory
- - `-P perl-regex` - uses Perl regular expression for a _`pattern`_ (for Perl/PHP lovers)
- - `-E extended-regex` - uses "extended" regular expression for a _`pattern`_
- - `-A number` - in addition to the line where _`pattern`_ was found also shows a _`number`_ of lines after
- - `-B number` - additionaly shows a _`number`_ of lines before the one where _`pattern`_ was found 
+ - `find -name '<pattern>'` - look for a file which name meets the `<pattern>` (e.g. `find -name '*.html'` or `find -name 'id_rsa*'`)
+ - `find <directory> -name '<pattern>'` - look for a file with `<pattern>` name in the `<directory>`
+- `grep '<pattern>' [<location>]` - search for a `<pattern>` within a file, optionally in the specific `<location>`, e.g. `grep 'text' ./*.txt` looks for occurrences of "`text`" in all `.txt` files in the current directory
+ - `-P <perl-regex>` - uses Perl regular expression for a search pattern (for Perl/PHP lovers)
+ - `-E <extended-regex>` - uses "extended" regular expression for a search pattern
+ - `-A <number>` - in addition to the line where `<pattern>` was found also shows a _`<number>`_ of lines after
+ - `-B <number>` - additionaly shows a `<number>` of lines before the one where `<pattern>` was found 
 
 ## Users
+- `adduser <username>` adds a new user with name `<username>`
+ - `-g` specifies to which group user should be added (alternatively `adduser <username> <groupname>')
+- `addgroup <groupname>` adds a new user group
 
 ## Applications
-- `which application` tells where the _`application`_ is located, e.g. `which grep => /bin/grep`
-- `apt-get install package` installs _`package`_ from the repository
-- `apt-get remove package` uninstalls _`package`_
- - `apt-get purge package` like `remove` but also deletes configuration files, etc.
-- `apt-cache search keyword` searches apps/packages by _`keyword`_
-- `apt-cache show package` shows info about app/package (e.g. version and size)
-- `apt-add-repository repository` adds _`repository`_ to the lists of repos (located under `/etc/apt/sources.list` or `/etc/apt/sources.list.d`
+- `which <application>` tells where the `<application>` is located, e.g. `which grep => /bin/grep`
+- `apt-get install <package>` installs `<package>` from the repository
+- `apt-get remove <package>` uninstalls `<package>`
+ - `apt-get purge <package>` like `remove` but also deletes configuration files, etc.
+- `apt-cache search <keyword>` searches apps/packages by `<keyword>`
+- `apt-cache show <package>` shows info about app/package (e.g. version and size)
+- `apt-add-repository <repository>` adds `<repository>` to the lists of repos (located under `/etc/apt/sources.list` or `/etc/apt/sources.list.d`
  - `-r` removes repo from the list 
 
 ## Security
@@ -68,24 +72,24 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 - top, kill, etc.
 
 ## Text processing
-- `tail file` shows the last part of the _`file`_ (last 10 lines)
+- `tail <file>` shows the last part of the `<file>` (last 10 lines)
  - `-f` outputs the appended data as the file grows ("live update")
- - `-n number` how many lines should be shown
+ - `-n <number>` how many lines should be shown
  - can show output from many files at once, e.g. `tail /var/log/*/*.log` or `tail file1 file2`
-- `vim file` opens a _`file`_ in the vim editor (or `vim` to just open vim)
+- `vim <file>` opens a `<file>` in the vim editor (or `vim` to just open vim)
  - `i` (when inside vim) switches from visual mode to edit mode (other ways: `a`, `I`, `A`)
  - `<Esc>` to switch from either visual or edit mode into a command mode
 - Notable `vim` commands:
  - `u` undo (`Ctrl+R` redo)
- - `/search_pattern` searches for a _`search_pattern`_
- - `n` search next
- - `N` search prev
- - `:e file` opens a _`file`_
+ - `/<search_pattern>` searches for a `<search_pattern>`
+ - `n` go to the next search result
+ - `N` go to the previous search result
+ - `:e <file>` opens a `<file>`
  - `:q` quits vim
  - `:w` save (write)
  - `:wq` save and quit
  - `:q!` quit without saving
-- `cat file` shows the content of the _`file`_
+- `cat <file>` shows the content of the `<file>`
  - `-n` with line numbers 
  - can show content of many files at once, e.g. `cat /*.txt` or `cat file1 file2`
 - less, nano
