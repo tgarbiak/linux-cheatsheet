@@ -1,5 +1,5 @@
 # Linux cheatsheet
-Linux cheat sheet. Linux in 80 (so far) bullet points. Ubuntu Edition
+Linux in around 90 (so far) bullet points. Ubuntu Edition
 
 ## License
 
@@ -45,11 +45,15 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 - `find` searches for files in the directory tree
  - `find -name '<pattern>'` - look for a file which name meets the `<pattern>` (e.g. `find -name '*.html'` or `find -name 'id_rsa*'`)
  - `find <directory> -name '<pattern>'` - look for a file with `<pattern>` name in the `<directory>`
-- `grep '<pattern>' [<location>]` - search for a `<pattern>` within a file, optionally in the specific `<location>`, e.g. `grep 'text' ./*.txt` looks for occurrences of "`text`" in all `.txt` files in the current directory
- - `-P <perl-regex>` - uses Perl regular expression for a search pattern (for Perl/PHP lovers)
- - `-E <extended-regex>` - uses "extended" regular expression for a search pattern
- - `-A <number>` - in addition to the line where `<pattern>` was found also shows a _`<number>`_ of lines after
- - `-B <number>` - additionaly shows a `<number>` of lines before the one where `<pattern>` was found 
+- `grep '<pattern>' [<location>]` - search for a `<pattern>` within a `<location>`. `<location>` can be either a file, a directory or a standard input. User can provide as many `<locations>` as she wants.
+ - `--include <file-name-pattern>` - search only within files whose name matches the `<file-name-pattern>`. E.g `grep --include *.html "div"` looks for an occurence of `div` in `html` files in the current directory.
+ - `-r` searches recursively through the directories
+ - `-P <perl-regex>` uses Perl regular expression for a search pattern (for Perl/PHP lovers)
+ - `-E <extended-regex>` uses "extended" regular expression for a search pattern, same as `egrep`
+ - `-n` shows line number along the result
+ - `-A <number>` in addition to the line where `<pattern>` was found also shows a _`<number>`_ of lines after
+ - `-B <number>` additionaly shows a `<number>` of lines before the one where `<pattern>` was found
+ - `-L` shows files that don't contain searched `<pattern>`
 
 ## Users
 - `cat /etc/passwd` to list all users (`cut -d: -f1 /etc/passwd` to just see their names)
