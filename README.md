@@ -20,7 +20,8 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ## Basic commands
 - `pwd` prints current/working directory
-- `sudo <command>` in general: to execute a `<command>` as an other user (e.g. root), usually: executes a command as a super user (e.g. root)
+- `sudo <command>` in general: to execute a `<command>` as an other user (e.g. root), usually: executes a command as a superuser (a.k.a. root)
+- `su [<user>]` to become, for the login session, a different user, if `<user>` is not provided `su` defaults to becoming the superuser.
 
 ## Files
 - `touch <file>` creates a new `<file>` or updates modification time if `<file>` already exists
@@ -55,6 +56,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 - `adduser <username>` adds a new user with name `<username>` (will also ask you to provide a password for that user)
  - `adduser <username> <groupname>` specifies to which group user should be added (or if user already exists adds `<username>` to the `<groupname>`)
  - `--system` to add a system user
+ - `adduser <username> sudo` adds user to the group `sudo` and to the `sudoers` file (`/etc/sudoers`). This let the user execute `sudo` command
 - `addgroup <groupname>` adds a new user group
 - `deluser <username>` removes a user
  - `--remove-home` removes user's home directory (`/home/<username>`)
@@ -62,8 +64,10 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `--backup` backup files before removing
  - `--system` if user is a system user
 - `deluser <username> <groupname>` removes a user from a group (user still exists)
+- `groups <username>` list groups user with `<username>` is member of
+ - when you add new user it's good to check to which groups typical user belongs to and add new user to them to 
 - `delgroup <groupname>` removes a group
- - `--only-if-empty` only remove the group if there are no users in it
+ - `--only-if-empty` only remove the group if there are no users in it 
 
 ## Applications
 - `which <application>` tells where the `<application>` is located, e.g. `which grep => /bin/grep`
@@ -76,6 +80,10 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `-r` removes repo from the list 
 
 ## Security
+- to disable root SSH login: open `/etc/ssh/sshd_config` and find (or add, or uncomment) a setting `PermitRootLogin` and set it to  `no`
+- to allow a user executing `sudo` without a `password` (bit risky, but useful when users logins using public/private keys):
+ - `sudo visudo`
+ - add line `<username> ALL=(ALL) NOPASSWD: ALL`
 - port scanning, port blocking, firewall rules, honeypots...
 
 ## Process management
