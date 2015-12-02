@@ -1,5 +1,5 @@
 # Linux cheatsheet
-Linux cheat sheet. Linux in ?? bullet points. Ubuntu/Debian Edition
+Linux cheat sheet. Linux in 80 (so far) bullet points. Ubuntu Edition
 
 ## License
 
