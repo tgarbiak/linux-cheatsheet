@@ -56,7 +56,7 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
 - `adduser <username>` adds a new user with name `<username>` (will also ask you to provide a password for that user)
  - `adduser <username> <groupname>` specifies to which group user should be added (or if user already exists adds `<username>` to the `<groupname>`)
  - `--system` to add a system user
- - `adduser <username> sudo` adds user to the group `sudo` and to the `sudoers` file (`/etc/sudoers`). This let the user execute `sudo` command
+ - `adduser <username> sudo` adds user to the group `sudo` and to the `sudoers` file (`/etc/sudoers`). This lets the user execute `sudo` command.
 - `addgroup <groupname>` adds a new user group
 - `deluser <username>` removes a user
  - `--remove-home` removes user's home directory (`/home/<username>`)
@@ -80,8 +80,8 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/
  - `-r` removes repo from the list 
 
 ## Security
-- to disable root SSH login: open `/etc/ssh/sshd_config` and find (or add, or uncomment) a setting `PermitRootLogin` and set it to  `no`
-- to allow a user executing `sudo` without a `password` (bit risky, but useful when users logins using public/private keys):
+- to disable root SSH login: open `/etc/ssh/sshd_config`, find (or add, or uncomment) a setting `PermitRootLogin`, set it to  `no` and restart `ssh` service (`service ssh restart`)
+- to allow a user executing `sudo` without a `password` (bit risky, but useful when user logins using public/private keys):
  - `sudo visudo`
  - add line `<username> ALL=(ALL) NOPASSWD: ALL`
 - port scanning, port blocking, firewall rules, honeypots...
